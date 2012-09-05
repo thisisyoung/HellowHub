@@ -9,7 +9,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server">
+    <form runat="server" >
     <div class="page">
         <div class="header">
             <div class="title">
@@ -36,6 +36,14 @@
                     </Items>
                 </asp:Menu>
             </div>
+        </div>
+        <asp:TextBox ID="TextBox1" runat="server">1232131</asp:TextBox>
+        <div><a href="Testpage1.aspx">redirect via 'A' tag</a></div>
+        <div><input type="button" value="redirect via submit button" onclick="(function submitForm(){ document.forms[0].action = '/Testpage1.aspx';
+                document.forms[0].method = 'post';
+                document.forms[0].submit();})()"/></div>
+        <div>
+        <asp:Button ID="Button1" runat="server" Text="redirect via server side transfer" onclick="Button1_Click"  />
         </div>
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
